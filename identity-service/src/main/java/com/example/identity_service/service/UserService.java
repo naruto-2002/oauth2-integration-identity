@@ -1,5 +1,6 @@
 package com.example.identity_service.service;
 
+import com.example.identity_service.dto.request.PasswordCreationRequest;
 import com.example.identity_service.dto.request.UserCreationRequest;
 import com.example.identity_service.dto.request.UserUpdateRequest;
 import com.example.identity_service.dto.response.UserResponse;
@@ -8,15 +9,17 @@ import java.util.List;
 
 public interface UserService {
 
-    public UserResponse create(UserCreationRequest request);
+    UserResponse create(UserCreationRequest request);
 
-    public List<UserResponse> getAll();
+    void createPassword(PasswordCreationRequest request);
 
-    public UserResponse getUser(String id);
+    List<UserResponse> getAll();
 
-    public UserResponse update(String id, UserUpdateRequest request);
+    UserResponse getUser(String id);
 
-    public void delete(String id);
+    UserResponse update(String id, UserUpdateRequest request);
 
-    public UserResponse getMyInfo();
+    void delete(String id);
+
+    UserResponse getMyInfo();
 }

@@ -1,6 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PropertiesComponent">{}</component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a2aaf6e4-5046-435f-b0a0-6f25b542fe75" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/dto/request/ExchangeTokenRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/dto/request/PasswordCreationRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/dto/response/ExchangeTokenResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/dto/response/OutboundUserResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/repository/httpclient/OutboundIdentityClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/repository/httpclient/OutboundUserClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identity-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/identity-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/IdentityServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/IdentityServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/configuration/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/controller/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/dto/response/UserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/dto/response/UserResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/exception/ErrorCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/exception/ErrorCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/service/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/service/impl/AuthenticationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/service/impl/AuthenticationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identity-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/identity-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-app/src/components/Authenticate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-app/src/components/Authenticate.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-app/src/components/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-app/src/components/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-app/src/components/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-app/src/components/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-app/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web-app/src/index.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2z56z86gocCkfGoa0tYeO4dzZaj" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.IdentityServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql_aurora&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.identity_service.dto.request" />
+      <recent name="com.example.identity_service.dto.response" />
+      <recent name="com.example.identity_service.repository.httpclient" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="IdentityServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="identity-service" />
@@ -9,5 +89,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a2aaf6e4-5046-435f-b0a0-6f25b542fe75" name="Changes" comment="" />
+      <created>1751008848110</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1751008848110</updated>
+      <workItem from="1751008850270" duration="5852000" />
+      <workItem from="1751206021862" duration="6592000" />
+      <workItem from="1751294662126" duration="1997000" />
+      <workItem from="1751296701237" duration="351000" />
+      <workItem from="1751297077512" duration="2569000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

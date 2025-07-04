@@ -18,6 +18,7 @@ public enum ErrorCode {
     PERMISSION_EXISTED(1010, "Permission existed", HttpStatus.BAD_REQUEST),
     ROLE_EXISTED(1011, "Role existed", HttpStatus.BAD_REQUEST),
     INVALID_DOB(1012, "Your age must be at least {min}", HttpStatus.BAD_REQUEST),
+    PASSWORD_EXISTED(1013, "Password existed", HttpStatus.BAD_REQUEST),
     ;
 
     private int code;

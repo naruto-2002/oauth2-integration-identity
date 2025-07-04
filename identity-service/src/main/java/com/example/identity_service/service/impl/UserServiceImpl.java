@@ -1,10 +1,12 @@
 package com.example.identity_service.service.impl;
 
+import com.example.identity_service.dto.request.PasswordCreationRequest;
 import com.example.identity_service.dto.request.UserCreationRequest;
 import com.example.identity_service.dto.request.UserUpdateRequest;
 import com.example.identity_service.dto.response.UserResponse;
 import com.example.identity_service.entity.Role;
 import com.example.identity_service.entity.User;
+import com.example.identity_service.enums.RoleUser;
 import com.example.identity_service.exception.AppException;
 import com.example.identity_service.exception.ErrorCode;
 import com.example.identity_service.mapper.UserMapper;
@@ -15,6 +17,7 @@ import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.util.StringUtils;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -46,10 +49,10 @@ public class UserServiceImpl implements UserService {
 
         List<Role> roles = new ArrayList<>();
 
-        Role roleAdmin =
-                Role.builder().name("ADMIN").description("System Administrator").build();
+        Role roleUser = roleRepository.findByName(RoleUser.USER.name())
+                .orElseThrow(() -> new AppException(ErrorCode.ROLE_NOT_FOUND));
 
-        roles.add(roleAdmin);
+        roles.add(roleUser);
 
         user.setRoles(new HashSet<>(roles));
 
@@ -61,6 +64,24 @@ public class UserServiceImpl implements UserService {
         
         return userMapper.toUserResponse(user);
     }
+
+    @Override
+    public void createPassword(PasswordCreationRequest request) {
+        var context = SecurityContextHolder.getContext();
+        String username = context.getAuthentication().getName();
+
+        var user = userRepository.findByUsername(username).orElseThrow(() -> new AppException(ErrorCode.USER_NOT_EXITED));
+
+        if(StringUtils.hasText(user.getPassword())) {
+            throw new AppException(ErrorCode.PASSWORD_EXISTED);
+        }
+
+        user.setPassword(passwordEncoder.encode(request.getPassword()));
+
+        userRepository.save(user);
+    }
+
+
 
     @Override
     //    @PreAuthorize("hasRole('ADMIN')")
@@ -109,6 +130,10 @@ public class UserServiceImpl implements UserService {
         User user =
                 userRepository.findByUsername(username).orElseThrow(() -> new AppException(ErrorCode.USER_NOT_EXITED));
 
-        return userMapper.toUserResponse(user);
+        var userResponse = userMapper.toUserResponse(user);
+
+        userResponse.setNoPassword(!StringUtils.hasText(user.getPassword()));
+
+        return userResponse;
     }
 }

@@ -18,4 +18,6 @@ public interface AuthenticationService {
     AuthenticationResponse refresh(RefreshTokenRequest request) throws ParseException, JOSEException;
 
     void logout(InvalidatedTokenRequest request) throws ParseException, JOSEException;
+
+    AuthenticationResponse outboundAuthentication(String code);
 }

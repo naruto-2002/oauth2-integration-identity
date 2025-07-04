@@ -1,17 +1,19 @@
 package com.example.identity_service.service.impl;
 
-import com.example.identity_service.dto.request.AuthenticationRequest;
-import com.example.identity_service.dto.request.IntrospectRequest;
-import com.example.identity_service.dto.request.InvalidatedTokenRequest;
-import com.example.identity_service.dto.request.RefreshTokenRequest;
+import com.example.identity_service.dto.request.*;
 import com.example.identity_service.dto.response.AuthenticationResponse;
 import com.example.identity_service.dto.response.IntrospectResponse;
 import com.example.identity_service.entity.InvalidatedToken;
+import com.example.identity_service.entity.Role;
 import com.example.identity_service.entity.User;
+import com.example.identity_service.enums.RoleUser;
 import com.example.identity_service.exception.AppException;
 import com.example.identity_service.exception.ErrorCode;
 import com.example.identity_service.repository.InvalidatedTokenRepository;
+import com.example.identity_service.repository.RoleRepository;
+import com.example.identity_service.repository.httpclient.OutboundIdentityClient;
 import com.example.identity_service.repository.UserRepository;
+import com.example.identity_service.repository.httpclient.OutboundUserClient;
 import com.example.identity_service.service.AuthenticationService;
 import com.nimbusds.jose.*;
 import com.nimbusds.jose.crypto.MACSigner;
@@ -31,9 +33,7 @@ import org.springframework.util.CollectionUtils;
 import java.text.ParseException;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
-import java.util.Date;
-import java.util.StringJoiner;
-import java.util.UUID;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
@@ -42,6 +42,9 @@ import java.util.UUID;
 public class AuthenticationServiceImpl implements AuthenticationService {
     UserRepository userRepository;
     InvalidatedTokenRepository invalidatedTokenRepository;
+    OutboundIdentityClient outboundIdentityClient;
+    OutboundUserClient outboundUserClient;
+    RoleRepository roleRepository;
 
     PasswordEncoder passwordEncoder;
 
@@ -56,6 +59,20 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     @NonFinal
     @Value("${jwt.refreshable-duration}")
     protected long REFRESHABLE_DURATION;
+
+    @NonFinal
+    @Value("${outbound.identity.client-id}")
+    protected String CLIENT_ID;
+
+    @NonFinal
+    @Value("${outbound.identity.client-secret}")
+    protected String CLIENT_SECRET;
+
+    @NonFinal
+    @Value("${outbound.identity.redirect-uri}")
+    protected String REDIRECT_URI;
+
+    protected final String GRANT_TYPE = "authorization_code";
 
     @Override
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
@@ -74,6 +91,46 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         var token = generateToken(user);
 
         return AuthenticationResponse.builder().token(token).authenticated(true).build();
+    }
+
+    @Override
+    public AuthenticationResponse outboundAuthentication(String code) {
+        var response = outboundIdentityClient.exchangeToken(ExchangeTokenRequest.builder()
+                        .code(code)
+                        .clientId(CLIENT_ID)
+                        .clientSecret(CLIENT_SECRET)
+                        .redirectUri(REDIRECT_URI)
+                        .grantType(GRANT_TYPE)
+                .build());
+
+        log.info("TOKEN RESPONSE: {}", response);
+
+        var userInfo = outboundUserClient.geetUserInfo("json", response.getAccessToken());
+
+        log.info("USER INFO: {}", userInfo);
+
+        List<Role> roles = new ArrayList<>();
+
+        Role roleUser = roleRepository.findByName(RoleUser.USER.name())
+                .orElseThrow(() -> new AppException(ErrorCode.ROLE_NOT_FOUND));
+
+        roles.add(roleUser);
+
+        var user = userRepository.findByUsername(userInfo.getEmail()).orElseGet(
+                () -> userRepository.save(User.builder()
+                                .username(userInfo.getEmail())
+                                .firstName(userInfo.getGivenName())
+                                .lastName(userInfo.getFamilyName())
+                                .roles(new HashSet<>(roles))
+                        .build())
+
+                );
+
+        var token = generateToken(user);
+
+        return AuthenticationResponse.builder()
+                .token(token)
+                .build();
     }
 
     @Override

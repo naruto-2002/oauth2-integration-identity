@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { json, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { setToken } from "../services/localStorageService";
 import { Box, CircularProgress, Typography } from "@mui/material";
@@ -8,16 +8,31 @@ export default function Authenticate() {
   const [isLoggedin, setIsLoggedin] = useState(false);
 
   useEffect(() => {
-    const accessTokenRegex = /access_token=([^&]+)/;
+    console.log(window.location.href);
+
+    const accessTokenRegex = /code=([^&]+)/;
     const isMatch = window.location.href.match(accessTokenRegex);
 
     if (isMatch) {
-      const accessToken = isMatch[1];
+      const authCode = isMatch[1];
 
-      console.log("Token: ", accessToken);
+      fetch(
+        `http://localhost:8080/identity/auth/outbound/authentication?code=${authCode}`,
+        {
+          method: "POST",
+        }
+      )
+        .then((response) => {
+          return response.json();
+        }) 
+        .then((data) => {
+          console.log(data)
 
-      setToken(accessToken);
-      setIsLoggedin(true);
+          setToken(data.result?.token);
+          setIsLoggedin(true);
+        })
+
+      
     }
   }, []);
 

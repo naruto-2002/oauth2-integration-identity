@@ -1,5 +1,6 @@
 package com.example.identity_service.controller;
 
+import com.example.identity_service.dto.request.PasswordCreationRequest;
 import com.example.identity_service.dto.request.UserCreationRequest;
 import com.example.identity_service.dto.request.UserUpdateRequest;
 import com.example.identity_service.dto.response.ApiResponse;
@@ -28,6 +29,15 @@ public class UserController {
         log.info("Controller: create user");
         return ApiResponse.<UserResponse>builder()
                 .result(userService.create(userRequest))
+                .build();
+    }
+
+    @PostMapping("/create-password")
+    ApiResponse<Void> createPassword(@RequestBody @Valid PasswordCreationRequest request) {
+        log.info("Controller: create password for user");
+        userService.createPassword(request);
+        return ApiResponse.<Void>builder()
+                .message("Password created successfully")
                 .build();
     }
 
