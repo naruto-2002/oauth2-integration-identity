@@ -5,36 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2aaf6e4-5046-435f-b0a0-6f25b542fe75" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/dto/request/ExchangeTokenRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/dto/request/PasswordCreationRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/dto/response/ExchangeTokenResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/dto/response/OutboundUserResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/repository/httpclient/OutboundIdentityClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/repository/httpclient/OutboundUserClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity-service/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/configuration/EnvLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identity-service/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/identity-service/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/identity-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/identity-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/IdentityServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/IdentityServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/configuration/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/controller/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/dto/response/UserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/dto/response/UserResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/exception/ErrorCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/exception/ErrorCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/service/AuthenticationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/service/impl/AuthenticationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/service/impl/AuthenticationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identity_service/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/identity-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/identity-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/src/components/Authenticate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-app/src/components/Authenticate.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/src/components/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-app/src/components/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/src/components/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-app/src/components/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web-app/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/web-app/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -110,10 +100,15 @@
       <workItem from="1751294662126" duration="1997000" />
       <workItem from="1751296701237" duration="351000" />
       <workItem from="1751297077512" duration="2569000" />
+      <workItem from="1751616559848" duration="444000" />
+      <workItem from="1751684800959" duration="2618000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
   </component>
 </project>
