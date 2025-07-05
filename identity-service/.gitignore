@@ -32,4 +32,4 @@ build/
 ### VS Code ###
 .vscode/
 
-/identity-service/.env
+.env
