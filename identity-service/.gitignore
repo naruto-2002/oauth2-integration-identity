@@ -33,5 +33,5 @@ build/
 .vscode/
 
 # .gitignore
-.env
+./identity-service/.env
 
