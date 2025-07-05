@@ -33,5 +33,5 @@ build/
 .vscode/
 
 # Ignore environment file
-/identity-service/.env
+.env
 
